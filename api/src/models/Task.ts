@@ -1,4 +1,4 @@
-import { Model, Schema, connection, model } from "mongoose";
+import { Model, Schema, Types, connection, model } from "mongoose";
 import { Task } from "../interfaces/task.interface";
 
 const schema = new Schema<Task>({
@@ -15,6 +15,7 @@ const schema = new Schema<Task>({
     required: true,
   },
   category: {
+    type: Types.ObjectId,
     ref: "Category",
     required: true,
   },
